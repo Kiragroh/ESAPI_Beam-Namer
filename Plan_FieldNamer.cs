@@ -39,6 +39,16 @@ namespace VMS.TPS
             // enable writing with this script.
             context.Patient.BeginModifications();
 
+            // first beam loop is necessary to change all beam-IDs to unique ones (other than the script ants to produce). Otherwise you could get errors if a right named beam already exist.
+            foreach (Beam b in context.PlanSetup.Beams)
+            {
+                newBeamCount = BeamCount<10? "0"+BeamCount.ToString(): BeamCount.ToString();
+                newBeamId = "zzz"+newBeamCount;
+                b.Id = newBeamId.Length > 16 ? newBeamId.Substring(0, 16) : newBeamId;
+                BeamCount++;
+            }
+            //Treatment field-Loop
+            BeamCount = 1;
             foreach (Beam b in context.PlanSetup.Beams.Where(x => !x.IsSetupField).OrderBy(y=> y.Id))
             {                
                 gantrydirection = b.GantryDirection.ToString().ToLower() == "none" ? "" : (b.GantryDirection.ToString().ToLower() == "clockwise" ? " cw" : " ccw");
@@ -47,13 +57,14 @@ namespace VMS.TPS
                 b.Id = newBeamId.Length > 16 ? newBeamId.Substring(0, 16) : newBeamId;
                 BeamCount++;
             }
+            //Setup field-Loop
             foreach (Beam b in context.PlanSetup.Beams.Where(x => x.IsSetupField).OrderBy(y => y.Id))
             {
                 StructureSet ss = context.PlanSetup.StructureSet;
                 gantrydirection = b.GantryDirection.ToString().ToLower() == "none" ? "" : (b.GantryDirection.ToString().ToLower() == "clockwise" ? " cw" : " ccw");
                 tableangle = Math.Round(b.ControlPoints.First().PatientSupportAngle, 0) == 0 ? "" : " T" + Math.Round(b.ControlPoints.First().PatientSupportAngle, 0);
                 newBeamId = "Setup " + Math.Round(b.ControlPoints.First().GantryAngle, 0) + gantrydirection + tableangle;
-                b.Id = newBeamId.Length > 16 ? newBeamId.Substring(0, 16) : newBeamId;
+                b.Id = newBeamId.Length > 16 ? newBeamId.Substring(0, 16) : newBeamId;                          
             }
         }
      
