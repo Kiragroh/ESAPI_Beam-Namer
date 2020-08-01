@@ -1,2 +1,2 @@
 # ESAPI_Beam-ReNamer
-Simply change your Beam/Field names with nomenclature of your choice.
+Simply change your Beam/Field IDs with the nomenclature of your choice.
