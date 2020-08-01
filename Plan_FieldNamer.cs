@@ -34,7 +34,7 @@ namespace VMS.TPS
             // TODO : Add here the code that is called when the script is launched from Eclipse.
             if (context.PlanSetup == null)
             {
-                MessageBox.Show("Please select a plan");
+                MessageBox.Show("Please select a treatment plan");
             }
             // enable writing with this script.
             context.Patient.BeginModifications();
