@@ -8,7 +8,7 @@ First-Compile tips:
 
 Note:
 - script is optimized to work with Eclipse 15.1
-- absolute beginner should first read my beginnerGuide
+- absolute ESAPI-beginner should first look at my GettingStartedMaterial (collection of many helpful stuff from me or others and even includes a PDF version of some ESAPI-OnlineHelps)
 https://drive.google.com/drive/folders/1-aYUOIfyvAUKtBg9TgEETiz4SYPonDOO
 
 Good Learning Task:
