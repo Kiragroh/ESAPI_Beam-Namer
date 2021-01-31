@@ -15,3 +15,4 @@ Good Learning Task:
 - read João Castelos Blog-Post regarding the same topic: https://medium.com/@jhmcastelo/writing-in-the-eclipse-database-change-the-fields-id-based-on-gantry-angle-312462f8fc67
 - add the BeamIdChanger.cs file to my project and utilize it. this will enable more flexibility for naming your beams. here is a screenshot from the blog post which is showing the naming scheme of 'BeamIdChanger.cs'
 ![Test Image 1](https://github.com/Kiragroh/ESAPI_Beam-Namer/blob/master/pics/BeamNamingScheme_CopiedFromJoaoCastelo.png)
+- With ESAPI 16 I would recommend to automatically add Setup-Fields with this kind of script. We re very happy doing so.
