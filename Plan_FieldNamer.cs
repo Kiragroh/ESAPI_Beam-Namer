@@ -24,6 +24,7 @@ namespace VMS.TPS
         string newBeamId = "";
         string gantrydirection ="";
         string tableangle = "";
+        string newBeamCount;
 
         public Script()
         {
