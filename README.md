@@ -1,4 +1,8 @@
 # ESAPI_Beam-Namer
+## General ESAPI Guidance
+
+For current build/runtime notes, clinical-safety reminders, stand-alone threading rules, write-enabled script governance, and ESAPI 18.x considerations, see [`docs/ESAPI_GENERAL_NOTES.md`](docs/ESAPI_GENERAL_NOTES.md).
+
 (Binary-Plugin)
 Simply change your Beam/Field IDs with the nomenclature of your choice.
 
